@@ -3,18 +3,28 @@ frontend:
   phases:
     preBuild:
       commands:
+        - echo "Node version:"
+        - node --version
+        - echo "NPM version:"
+        - npm --version
         - echo "Installing Next.js dependencies for Screen Time Journey marketing site..."
         - npm ci
-        - echo "Dependencies installed successfully"
+        - echo "Listing dependencies..."
+        - npm list --depth=0
     build:
       commands:
         - echo "Building Next.js marketing site for production..."
         - npm run build
-        - echo "Exporting static files..."
+        - echo "Build completed, checking output..."
+        - ls -la .next/
+        - echo "Checking if static export exists..."
+        - test -d .next && echo "✅ .next directory found" || echo "❌ .next directory missing"
     postBuild:
       commands:
         - echo "✅ Next.js marketing site build complete"
         - echo "🚀 Ready for deployment to screentimejourney.com"
+        - echo "Final build directory contents:"
+        - ls -la .next/
   artifacts:
     baseDirectory: .next
     files:
@@ -23,3 +33,6 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
+  environment:
+    variables:
+      NODE_OPTIONS: '--max_old_space_size=4096'
