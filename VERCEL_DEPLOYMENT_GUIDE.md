@@ -1,122 +1,162 @@
-# 🚀 **VERCEL DEPLOYMENT - Git Integration Method**
+# 🚀 Vercel Deployment Guide - Screen Time Journey
 
-## ✅ **Your Code is Ready & Pushed to Git**
+## Current Setup Status ✅
 
-Since the local npm cache has issues, let's use Vercel's **Git Integration** for deployment:
+**Projects are correctly mapped:**
+- **Marketing Site** (Next.js) → `screentimejourney.com`
+- **Dashboard** (React CRA) → `app.sreentimejourney.com`
 
----
+**Local directories:**
+- `marketing-site/` → linked to `screentimejourney.com`
+- `vercel-dashboard/` → linked to `app.sreentimejourney.com`
 
-## 🔗 **Method 1: Connect GitHub to Vercel (Recommended)**
+## 🔧 Git Integration Setup
 
-### **Step 1: Go to Vercel Dashboard**
-Visit: [https://vercel.com/dashboard](https://vercel.com/dashboard)
+### 1. Fix Git Author Permission Issue
 
-### **Step 2: Import Project from Git**
-1. Click **"Add New..." → "Project"**
-2. Click **"Import Git Repository"** 
-3. Connect your GitHub account if needed
-4. Find repository: `merijnkok959595/screentimejourney.com`
-5. Select **"Import"**
+The error shows: "Git author must have access to the team"
 
-### **Step 3: Configure Project**
-```
-Project Name: screentimejourney-marketing
-Framework Preset: Next.js
-Root Directory: marketing-site/
-Branch: amplify-deploy
-```
-
-### **Step 4: Add Environment Variables**
-In Vercel project settings, add:
+**Solution:**
 ```bash
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_51Rd76OCVD9tkw4fn6mxYN1ZIv...
-STRIPE_SECRET_KEY=sk_live_51Rd76OCVD9tkw4fn...
-NEXT_PUBLIC_STRIPE_PREMIUM_PRICE_EUR=price_1Sf7ivCVD9tkw4fnpfiMI5BF
+# Update git config with your Vercel account email
+git config --global user.email "your-vercel-account-email@example.com"
+git config --global user.name "Your Name"
+
+# Or set locally for this repo only
+git config user.email "your-vercel-account-email@example.com"
+git config user.name "Your Name"
 ```
 
-### **Step 5: Deploy**
-Click **"Deploy"** - Vercel will build from your git repository!
+### 2. Connect Projects to GitHub (Auto-Deploy)
 
----
-
-## 🔗 **Method 2: Use Existing Project (If Already Created)**
-
-If you already have a Vercel project:
-
-### **Step 1: Connect to Git**
-1. Go to your project in [Vercel Dashboard](https://vercel.com/dashboard)
-2. Go to **Settings → Git**
-3. Connect to: `merijnkok959595/screentimejourney.com`
-4. Set **Production Branch**: `amplify-deploy`
-5. Set **Root Directory**: `marketing-site/`
-
-### **Step 2: Trigger Deployment**
-1. Go to **Deployments** tab
-2. Click **"Redeploy"** or push new commit to trigger auto-deployment
-
----
-
-## 📋 **Your Repository Info**
-
-- **Repository**: `merijnkok959595/screentimejourney.com` 
-- **Branch**: `amplify-deploy`
-- **Marketing Site Folder**: `marketing-site/`
-- **Latest Commit**: All fixes applied ✅
-
----
-
-## 🎯 **Expected Result**
-
-**Your Marketing Site URL will be:**
-```
-https://screentimejourney-marketing.vercel.app
-```
-
-Or similar based on your project name.
-
----
-
-## ✅ **What's Already Done**
-
-- ✅ **Code pushed to git** with all fixes
-- ✅ **Build issues resolved** (Suspense, API routes, etc.)
-- ✅ **Dependencies fixed** in package.json
-- ✅ **Next.js config optimized** for Vercel
-
----
-
-## 🚨 **After Deployment**
-
-Once deployed, you'll need to:
-
-### **1. Add Stripe Keys**
-Add these to Vercel Environment Variables:
+**For screentimejourney.com (Marketing Site):**
 ```bash
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_...
-STRIPE_SECRET_KEY=sk_live_...
-NEXT_PUBLIC_STRIPE_PREMIUM_PRICE_EUR=price_1Sf7ivCVD9tkw4fnpfiMI5BF
+vercel project add github merijnkok959595/screentimejourney-nextjs-headless --project=screentimejourney.com
 ```
 
-### **2. Test Marketing Site**
-1. Visit your Vercel URL
-2. Check currency selector (no flags) ✅
-3. Check footer currency selector ✅  
-4. Click "Start now" → Should open Stripe checkout
+**For app.sreentimejourney.com (Dashboard):**
+```bash
+vercel project add github merijnkok959595/screentimejourney.com --project=app.sreentimejourney.com
+```
 
-### **3. Configure Stripe Webhook**
-Add webhook in Stripe Dashboard:
+## 🎯 Deployment Methods
+
+### Method 1: Direct Vercel Deploy (Manual)
+
+```bash
+# Deploy Marketing Site
+cd marketing-site
+vercel --prod
+
+# Deploy Dashboard  
+cd ../vercel-dashboard
+vercel --prod
 ```
-URL: https://ph578uz078.execute-api.eu-north-1.amazonaws.com/prod/api/stripe/webhook
-Events: checkout.session.completed, customer.subscription.*
+
+### Method 2: Git-Based Deploy (Recommended)
+
+**Step 1: Push to correct branches**
+```bash
+# From workspace root
+git add .
+git commit -m "Deploy latest updates to both sites"
+
+# Push to marketing site repo (triggers screentimejourney.com)
+git push headless-repo amplify-deploy
+
+# Push to dashboard repo (triggers app.sreentimejourney.com)  
+git push origin amplify-deploy
 ```
+
+## 📋 Repository Mappings
+
+**Current Git Remotes:**
+```bash
+origin → https://github.com/merijnkok959595/screentimejourney.com.git
+headless-repo → https://github.com/merijnkok959595/screentimejourney-nextjs-headless.git
+```
+
+**Deployment Flow:**
+```
+marketing-site/ code → headless-repo → screentimejourney.com (Vercel)
+vercel-dashboard/ code → origin → app.sreentimejourney.com (Vercel)
+```
+
+## 🛠️ Quick Deploy Commands
+
+**Deploy Both Sites:**
+```bash
+# From workspace root
+./quick-deploy.sh
+```
+
+**Deploy Individual Sites:**
+```bash
+# Marketing Site Only
+cd marketing-site && vercel --prod
+
+# Dashboard Only  
+cd vercel-dashboard && vercel --prod
+```
+
+## 📊 Environment Variables
+
+**Marketing Site (`screentimejourney.com`):**
+- Add via: `vercel env add`
+- Or Vercel Dashboard → screentimejourney.com → Settings → Environment Variables
+
+**Dashboard (`app.sreentimejourney.com`):**
+- Add via: `vercel env add` 
+- Or Vercel Dashboard → app.sreentimejourney.com → Settings → Environment Variables
+
+## 🔍 Monitoring & Logs
+
+```bash
+# View deployment logs
+vercel logs screentimejourney.com
+vercel logs app.sreentimejourney.com
+
+# Check project status
+vercel ls
+
+# View specific project deployments
+cd marketing-site && vercel ls
+cd vercel-dashboard && vercel ls
+```
+
+## 🎉 Production URLs
+
+- **Marketing Site**: https://screentimejourney.com
+- **Dashboard**: https://app.sreentimejourney.com
+
+## 🚨 Troubleshooting
+
+### Issue: "Git author must have access"
+**Solution**: Update git config with your Vercel account email (see step 1 above)
+
+### Issue: "Project not found"
+**Solution**: Re-link projects:
+```bash
+cd marketing-site && vercel link --project=screentimejourney.com --yes
+cd vercel-dashboard && vercel link --project=app.sreentimejourney.com --yes
+```
+
+### Issue: Environment variables not working
+**Solution**: Set via Vercel CLI:
+```bash
+cd marketing-site && vercel env add
+cd vercel-dashboard && vercel env add
+```
+
+## ✅ Next Steps
+
+1. ✅ Projects correctly linked
+2. ⏳ Fix git author permissions
+3. ⏳ Connect GitHub auto-deploy
+4. ⏳ Deploy latest code
+5. ⏳ Verify both sites are live
 
 ---
 
-## 🎉 **Both Apps Will Be Live**
-
-| App | Platform | URL | Status |
-|-----|----------|-----|--------|
-| **Marketing** | Vercel | `screentimejourney-marketing.vercel.app` | 🚀 Deploy via Git |
-| **Dashboard** | Amplify | `app.screentimejourney.com` | ✅ Auto-deploys from git |
-
-**Git integration = reliable deployment!** 🚀
+**Last Updated**: December 17, 2025
+**Status**: Ready for deployment 🚀
