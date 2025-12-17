@@ -23,3 +23,4 @@ While NextMerce Pro features advanced functionalities, seamless integration, and
 #### [🚀 Live Demo](https://demo.nextmerce.com/)
 
 #### [🌐 Visit Website](https://nextmerce.com/)
+# Force deployment trigger Wed Dec 17 20:15:17 WET 2025

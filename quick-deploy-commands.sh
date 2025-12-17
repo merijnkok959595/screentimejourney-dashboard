@@ -25,11 +25,14 @@ case "$1" in
     "both")
         echo -e "${BLUE}🚀 Deploying Both Sites${NC}"
         git add . && git commit -m "Deploy both sites $(date +%Y%m%d-%H%M)" || true
-        echo "Deploying dashboard..."
+        echo "Deploying dashboard to app.sreentimejourney.com..."
         git push origin HEAD:main
-        echo "Deploying marketing site..."
+        echo "Deploying marketing site to screentimejourney.com..."
         git push headless-repo HEAD:main
         echo -e "${GREEN}✅ Both sites deployed!${NC}"
+        echo -e "${BLUE}🌐 Live URLs:${NC}"
+        echo "  Dashboard: https://app.sreentimejourney.com"
+        echo "  Marketing: https://screentimejourney.com"
         ;;
     "status")
         echo -e "${BLUE}📊 Deployment Status${NC}"
