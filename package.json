@@ -1,0 +1,15 @@
+{
+  "name": "screentimejourney-marketing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd marketing-site && npm run dev",
+    "build": "cd marketing-site && npm ci && npm run build",
+    "start": "cd marketing-site && npm run start",
+    "lint": "cd marketing-site && npm run lint"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "screentimejourney-marketing",
+  "buildCommand": "cd marketing-site && npm install && npm run build",
+  "devCommand": "cd marketing-site && npm run dev",
+  "installCommand": "cd marketing-site && npm install",
+  "framework": "nextjs",
+  "outputDirectory": "marketing-site/.next"
+}
