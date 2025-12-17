@@ -36,6 +36,10 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "remotion-video-generator",
+    "aws_lambda_api",
+    "vercel-dashboard",
+    "shopify-leaderboard-app"
   ]
 }
