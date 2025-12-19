@@ -50,8 +50,8 @@ const HomeHeader = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          const header = document.querySelector('.header');
-          const logo = document.querySelector('.header-logo');
+          const header = document.querySelector('.header') as HTMLElement;
+          const logo = document.querySelector('.header-logo') as HTMLElement;
           
           // Transparent state
           const wasTransparent = isTransparent;
