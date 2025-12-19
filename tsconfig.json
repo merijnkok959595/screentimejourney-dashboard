@@ -41,6 +41,11 @@
     "app.screentimejourney",
     "aws_lambda_api",
     "vercel-dashboard",
-    "shopify-leaderboard-app"
+    "shopify-leaderboard-app",
+    "workspace-reorganized",
+    "remotion-bridge-lambda",
+    "aws_amplify_app",
+    "shopify-theme",
+    "out"
   ]
 }
