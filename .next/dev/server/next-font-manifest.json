@@ -1,6 +1,5 @@
 {
   "app": {
-    "[project]/src/app/(site)/page": [],
     "[project]/src/app/(site)/product/screentimejourney/page": []
   },
   "appUsingSizeAdjust": false,

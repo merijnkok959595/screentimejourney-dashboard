@@ -41,10 +41,15 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
           }
         }
       } catch (error) {
+        console.log('Footer selector fallback - setting Germany as default');
         // Fallback to Germany (EUR)
         const defaultCountry = getCountryByCode('DE');
         if (defaultCountry) {
           setSelectedCountry(defaultCountry);
+        } else {
+          // Ultimate fallback - set first country from list
+          console.log('No Germany found, setting first country:', COUNTRIES[0]);
+          setSelectedCountry(COUNTRIES[0] || null);
         }
       } finally {
         setIsLoading(false);
@@ -129,7 +134,13 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
   }, {} as Record<string, Country[]>);
 
   if (isLoading || !selectedCountry) {
-    return null;
+    return (
+      <div className={`disclosure relative ${className}`}>
+        <div className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md bg-transparent text-gray-700">
+          <span>Loading...</span>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -165,9 +176,10 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
       {isOpen && (
         <>
           <div 
-            className="disclosure__list-wrapper country-selector fixed bottom-20 left-4 right-4 bg-white rounded-md shadow-xl border border-gray-200 max-w-sm max-h-[400px] overflow-hidden" 
+            className="disclosure__list-wrapper country-selector fixed bottom-20 left-4 right-4 bg-white rounded-lg shadow-2xl border-2 border-gray-300 max-w-sm max-h-[400px] overflow-hidden" 
             style={{ 
-              zIndex: 99999
+              zIndex: 99999,
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05)'
             }}
           >
             {/* Search Input */}
@@ -187,7 +199,7 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                   placeholder="Search countries or currencies..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-md text-gray-800 placeholder-gray-400 focus:outline-none focus:border-gray-400 focus:bg-white transition-all"
+                  className="w-full pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all font-medium"
                 />
               </div>
             </div>
@@ -218,8 +230,8 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                                 <path fillRule="evenodd" d="M11.35.643a.5.5 0 0 1 .006.707l-6.77 6.886a.5.5 0 0 1-.719-.006L0.638 4.845a.5.5 0 1 1 .724-.69l2.872 3.011 6.41-6.517a.5.5 0 0 1 .707-.006z" clipRule="evenodd" />
                               </svg>
                             </span>
-                            <span className="country text-gray-800 text-sm">{country.name}</span>
-                            <span className="localization-form__currency text-gray-500 text-xs whitespace-nowrap">
+                            <span className="country text-gray-900 text-sm font-medium">{country.name}</span>
+                            <span className="localization-form__currency text-gray-600 text-xs whitespace-nowrap font-medium">
                               {country.currency} {formatPrice(country)}
                             </span>
                           </button>
@@ -227,7 +239,7 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                       ))}
                     </ul>
                   ) : (
-                    <div className="px-4 py-3 text-gray-500 text-sm text-center">
+                    <div className="px-4 py-3 text-gray-700 text-sm text-center bg-gray-50">
                       No countries found for "{searchTerm}"
                     </div>
                   )}
@@ -237,17 +249,17 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                 <div className="py-1">
                   {Object.entries(groupedCountries).map(([region, countries]) => (
                     <div key={region}>
-                      <div className="px-4 py-2 text-gray-400 text-xs font-semibold uppercase tracking-wider border-t border-gray-100 first:border-t-0">
-                        {region}
-                      </div>
+                        <div className="px-4 py-2 text-gray-700 text-xs font-semibold uppercase tracking-wider border-t border-gray-100 first:border-t-0 bg-gray-50">
+                          {region}
+                        </div>
                       <ul role="list" className="list-unstyled">
                         {countries.map((country) => (
                           <li key={country.code} className="disclosure__item">
                             <button
                               className={`w-full text-left disclosure__link grid grid-cols-[auto_1fr_auto] gap-3 px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
                                 selectedCountry.code === country.code
-                                  ? "bg-gray-50 text-gray-900"
-                                  : "text-gray-700"
+                                  ? "bg-purple-50 text-purple-900 font-medium"
+                                  : "text-gray-800 hover:text-gray-900"
                               }`}
                               onClick={() => handleCountrySelect(country)}
                             >
@@ -260,8 +272,8 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                                   <path fillRule="evenodd" d="M11.35.643a.5.5 0 0 1 .006.707l-6.77 6.886a.5.5 0 0 1-.719-.006L0.638 4.845a.5.5 0 1 1 .724-.69l2.872 3.011 6.41-6.517a.5.5 0 0 1 .707-.006z" clipRule="evenodd" />
                                 </svg>
                               </span>
-                              <span className="country text-gray-800 text-sm">{country.name}</span>
-                              <span className="localization-form__currency text-gray-500 text-xs whitespace-nowrap">
+                              <span className="country text-gray-900 text-sm font-medium">{country.name}</span>
+                              <span className="localization-form__currency text-gray-600 text-xs whitespace-nowrap font-medium">
                                 {country.currency} {formatPrice(country)}
                               </span>
                             </button>
