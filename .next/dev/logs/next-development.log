@@ -46,3 +46,4 @@
 [00:00:52.244] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
 [00:00:59.125] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
 [00:00:59.125] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:02:19.254] Server  LOG     ✓ Compiled in 237ms

@@ -1199,6 +1199,10 @@ main {
   min-width: 83px;
 }
 
+.min-w-\[40px\] {
+  min-width: 40px;
+}
+
 .max-w-\[1060px\] {
   max-width: 1060px;
 }
