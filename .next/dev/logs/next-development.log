@@ -899,3 +899,8 @@ It can also happen if the client has a browser extension installed which messes 
 [01:20:57.490] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
 [01:20:57.927] Browser LOG     ✅ Milestones loaded successfully
 [01:20:57.927] Browser LOG     ✅ Milestones loaded successfully
+[01:23:29.465] Server  LOG     ✓ Compiled in 165ms
+[01:23:29.754] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[01:23:29.754] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[01:23:29.754] Browser ERROR   %s a style property during rerender (%s) when a conflicting property is set (%s) can lead to styling bugs. To avoid this, don't mix shorthand and non-shorthand properties for the same value; instead, replace the shorthand with separate values. Removing background backgroundPosition
+[01:23:29.754] Browser ERROR   %s a style property during rerender (%s) when a conflicting property is set (%s) can lead to styling bugs. To avoid this, don't mix shorthand and non-shorthand properties for the same value; instead, replace the shorthand with separate values. Removing background backgroundSize

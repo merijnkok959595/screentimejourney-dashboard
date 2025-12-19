@@ -151,17 +151,18 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
         style={{ 
           textAlign: 'left', 
           justifyContent: 'flex-start',
-          background: 'linear-gradient(to right, transparent 100%, white 0%)',
+          backgroundImage: 'linear-gradient(to right, transparent 100%, white 0%)',
           backgroundSize: '200% 100%',
           backgroundPosition: '100% 0',
+          backgroundRepeat: 'no-repeat',
           transition: 'all 0.3s ease-out'
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'linear-gradient(to right, white 100%, white 0%)';
+          e.currentTarget.style.backgroundImage = 'linear-gradient(to right, white 100%, white 0%)';
           e.currentTarget.style.color = '#111827';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'linear-gradient(to right, transparent 100%, white 0%)';
+          e.currentTarget.style.backgroundImage = 'linear-gradient(to right, transparent 100%, white 0%)';
           e.currentTarget.style.color = 'white';
         }}
         aria-expanded={isOpen}
