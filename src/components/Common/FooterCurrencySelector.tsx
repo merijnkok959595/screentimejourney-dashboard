@@ -147,7 +147,7 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
     <div className="disclosure relative" ref={dropdownRef}>
       <button
         type="button"
-        className={`disclosure__button footer-currency-selector flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md bg-transparent text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all text-sm font-medium ${className}`}
+        className={`disclosure__button footer-currency-selector flex items-center gap-2 px-4 py-2 border border-[#2E0456] rounded-md bg-[#2E0456] text-white hover:bg-[#3a1a5c] hover:border-[#3a1a5c] transition-all text-sm font-medium ${className}`}
         style={{ textAlign: 'left', justifyContent: 'flex-start' }}
         aria-expanded={isOpen}
         onClick={() => {
@@ -214,10 +214,10 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                       {filteredCountries.map((country) => (
                         <li key={country.code} className="disclosure__item">
                           <button
-                            className={`w-full text-left disclosure__link grid grid-cols-[auto_1fr_auto] gap-3 px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
+                            className={`w-full text-left disclosure__link grid grid-cols-[auto_1fr_auto] gap-3 px-4 py-2.5 text-sm hover:bg-purple-50 hover:text-purple-900 transition-colors ${
                               selectedCountry.code === country.code
-                                ? "bg-gray-50 text-gray-900"
-                                : "text-gray-700"
+                                ? "bg-purple-100 text-purple-900 font-medium"
+                                : "text-gray-900"
                             }`}
                             onClick={() => handleCountrySelect(country)}
                           >
@@ -226,12 +226,12 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                                 selectedCountry.code === country.code ? "block" : "invisible"
                               }`}
                             >
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 9" className="w-full h-full text-gray-600">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 9" className="w-full h-full text-purple-600">
                                 <path fillRule="evenodd" d="M11.35.643a.5.5 0 0 1 .006.707l-6.77 6.886a.5.5 0 0 1-.719-.006L0.638 4.845a.5.5 0 1 1 .724-.69l2.872 3.011 6.41-6.517a.5.5 0 0 1 .707-.006z" clipRule="evenodd" />
                               </svg>
                             </span>
-                            <span className="country text-gray-900 text-sm font-medium">{country.name}</span>
-                            <span className="localization-form__currency text-gray-600 text-xs whitespace-nowrap font-medium">
+                            <span className="country text-gray-900 text-sm font-bold">{country.name}</span>
+                            <span className="localization-form__currency text-gray-800 text-xs whitespace-nowrap font-semibold">
                               {country.currency} {formatPrice(country)}
                             </span>
                           </button>
@@ -239,7 +239,7 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                       ))}
                     </ul>
                   ) : (
-                    <div className="px-4 py-3 text-gray-700 text-sm text-center bg-gray-50">
+                    <div className="px-4 py-3 text-gray-900 text-sm text-center bg-gray-100 font-medium">
                       No countries found for "{searchTerm}"
                     </div>
                   )}
@@ -249,17 +249,17 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                 <div className="py-1">
                   {Object.entries(groupedCountries).map(([region, countries]) => (
                     <div key={region}>
-                        <div className="px-4 py-2 text-gray-700 text-xs font-semibold uppercase tracking-wider border-t border-gray-100 first:border-t-0 bg-gray-50">
+                        <div className="px-4 py-2 text-gray-900 text-xs font-bold uppercase tracking-wider border-t border-gray-200 first:border-t-0 bg-purple-50">
                           {region}
                         </div>
                       <ul role="list" className="list-unstyled">
                         {countries.map((country) => (
                           <li key={country.code} className="disclosure__item">
                             <button
-                              className={`w-full text-left disclosure__link grid grid-cols-[auto_1fr_auto] gap-3 px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
+                              className={`w-full text-left disclosure__link grid grid-cols-[auto_1fr_auto] gap-3 px-4 py-2.5 text-sm hover:bg-purple-50 hover:text-purple-900 transition-colors ${
                                 selectedCountry.code === country.code
-                                  ? "bg-purple-50 text-purple-900 font-medium"
-                                  : "text-gray-800 hover:text-gray-900"
+                                  ? "bg-purple-100 text-purple-900 font-bold"
+                                  : "text-gray-900 hover:font-medium"
                               }`}
                               onClick={() => handleCountrySelect(country)}
                             >
@@ -268,12 +268,12 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
                                   selectedCountry.code === country.code ? "block" : "invisible"
                                 }`}
                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 9" className="w-full h-full text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 9" className="w-full h-full text-purple-600">
                                   <path fillRule="evenodd" d="M11.35.643a.5.5 0 0 1 .006.707l-6.77 6.886a.5.5 0 0 1-.719-.006L0.638 4.845a.5.5 0 1 1 .724-.69l2.872 3.011 6.41-6.517a.5.5 0 0 1 .707-.006z" clipRule="evenodd" />
                                 </svg>
                               </span>
-                              <span className="country text-gray-900 text-sm font-medium">{country.name}</span>
-                              <span className="localization-form__currency text-gray-600 text-xs whitespace-nowrap font-medium">
+                              <span className="country text-gray-900 text-sm font-bold">{country.name}</span>
+                              <span className="localization-form__currency text-gray-800 text-xs whitespace-nowrap font-semibold">
                                 {country.currency} {formatPrice(country)}
                               </span>
                             </button>

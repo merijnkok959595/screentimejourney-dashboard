@@ -1,5 +1,6 @@
 {
   "/(site)/(pages)/signin/page": "app/(site)/(pages)/signin/page.js",
   "/(site)/page": "app/(site)/page.js",
-  "/(site)/product/screentimejourney/page": "app/(site)/product/screentimejourney/page.js"
+  "/(site)/product/screentimejourney/page": "app/(site)/product/screentimejourney/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }
