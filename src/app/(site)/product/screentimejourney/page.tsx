@@ -6,6 +6,7 @@ import MilestonesPreview from '@/components/Common/MilestonesPreview';
 import LeaderboardPreview from '@/components/Common/LeaderboardPreview';
 import StripeCheckout from '@/components/Stripe/StripeCheckout';
 import PriceDisplay from '@/components/Common/PriceDisplay';
+import PaymentIcons from '@/components/Common/PaymentIcons';
 
 const ScreenTimeJourneyProductPage = () => {
   const [expandedQuickFaq, setExpandedQuickFaq] = useState<number | null>(null);
@@ -231,22 +232,19 @@ const ScreenTimeJourneyProductPage = () => {
               <div style={{ marginBottom: '40px' }}>
                 <div style={{
                   display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '8px',
-                  alignItems: 'center'
+                  flexDirection: 'column',
+                  gap: '12px',
+                  alignItems: 'flex-start'
                 }}>
-                  {/* Payment method icons */}
-                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                    <div style={{ width: '40px', height: '24px', background: '#1e3a8a', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '10px', fontWeight: 'bold' }}>AMEX</div>
-                    <div style={{ width: '40px', height: '24px', background: '#000', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '10px', fontWeight: 'bold' }}>PAY</div>
-                    <div style={{ width: '40px', height: '24px', background: '#ff6b00', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '8px', fontWeight: 'bold' }}>IDEAL</div>
-                    <div style={{ width: '40px', height: '24px', background: '#4285f4', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '8px', fontWeight: 'bold' }}>GPAY</div>
-                    <div style={{ width: '40px', height: '24px', background: '#e20074', borderRadius: '4px' }}></div>
-                    <div style={{ width: '40px', height: '24px', background: '#eb001b', borderRadius: '4px' }}></div>
-                    <div style={{ width: '40px', height: '24px', background: '#5d2d91', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '8px', fontWeight: 'bold' }}>SHOP</div>
-                    <div style={{ width: '40px', height: '24px', background: '#00a9ff', borderRadius: '4px' }}></div>
-                    <div style={{ width: '40px', height: '24px', background: '#1a1f71', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '10px', fontWeight: 'bold' }}>VISA</div>
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: 'rgba(15, 23, 42, 0.6)',
+                    fontFamily: 'var(--font-body)',
+                    fontWeight: '500'
+                  }}>
+                    Secure payments with:
                   </div>
+                  <PaymentIcons />
                 </div>
               </div>
 

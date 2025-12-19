@@ -495,16 +495,16 @@ main {
   bottom: 0;
 }
 
+.bottom-20 {
+  bottom: 5rem;
+}
+
 .bottom-4 {
   bottom: 1rem;
 }
 
 .bottom-8 {
   bottom: 2rem;
-}
-
-.bottom-full {
-  bottom: 100%;
 }
 
 .left-0 {
@@ -517,6 +517,10 @@ main {
 
 .left-3 {
   left: .75rem;
+}
+
+.left-4 {
+  left: 1rem;
 }
 
 .right-0 {
@@ -975,16 +979,16 @@ main {
   max-height: 243px;
 }
 
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .max-h-\[400px\] {
   max-height: 400px;
 }
 
 .max-h-\[500px\] {
   max-height: 500px;
-}
-
-.max-h-\[300px\] {
-  max-height: 300px;
 }
 
 .min-h-\[270px\] {
@@ -1105,10 +1109,6 @@ main {
 
 .w-px {
   width: 1px;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .min-w-\[111px\] {
@@ -1339,6 +1339,10 @@ main {
   max-width: 28rem;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -1391,11 +1395,6 @@ main {
 
 .translate-y-full {
   --tw-translate-y: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-2 {
-  --tw-translate-y: -.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -7602,14 +7601,23 @@ header.bg-transparent .header-nav a, header[class*="bg-transparent"] .header-nav
   .product-video-container {
     aspect-ratio: 1 !important;
     border-radius: 8px !important;
-    width: 85% !important;
-    max-width: 85% !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     margin: 0 auto !important;
-    padding: 0 1.5rem !important;
+    padding: 0 1rem !important;
     box-shadow: 0 1px 3px #0f172a08 !important;
   }
+}
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-video-container {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+}
+
+@media (max-width: 768px) {
   html, body {
     width: 100% !important;
     max-width: 100vw !important;
@@ -8106,10 +8114,6 @@ header.bg-transparent .header-nav a, header[class*="bg-transparent"] .header-nav
 
 .focus\:ring-blue\/20:focus {
   --tw-ring-color: #3c50e033;
-}
-
-.focus\:ring-opacity-20:focus {
-  --tw-ring-opacity: .2;
 }
 
 .disabled\:text-gray-4:disabled {

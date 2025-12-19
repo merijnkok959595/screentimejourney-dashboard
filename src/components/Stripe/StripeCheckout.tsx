@@ -69,16 +69,6 @@ const StripeCheckout: React.FC<StripeCheckoutProps> = ({
     };
   }, []);
 
-  // Auto-trigger checkout if autoTrigger is true
-  useEffect(() => {
-    if (autoTrigger && !loading) {
-      const timeoutId = setTimeout(() => {
-        handleCheckout();
-      }, 500);
-      return () => clearTimeout(timeoutId);
-    }
-  }, [autoTrigger, loading, handleCheckout]);
-
   const handleCheckout = useCallback(async () => {
     if (!STRIPE_CONFIG.isConfigured) {
       toast.error('Payment system is being configured. Please try again in a few minutes.');
@@ -134,6 +124,16 @@ const StripeCheckout: React.FC<StripeCheckoutProps> = ({
       setLoading(false);
     }
   }, [plan, currency, priceId, loading]);
+
+  // Auto-trigger checkout if autoTrigger is true
+  useEffect(() => {
+    if (autoTrigger && !loading) {
+      const timeoutId = setTimeout(() => {
+        handleCheckout();
+      }, 500);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [autoTrigger, loading, handleCheckout]);
 
   if (children) {
     return (

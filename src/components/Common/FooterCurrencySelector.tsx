@@ -102,6 +102,14 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
     ? getCountriesBySearch(searchTerm)
     : COUNTRIES;
 
+  console.log('FooterCurrencySelector render:', {
+    isOpen,
+    countriesLength: COUNTRIES.length,
+    filteredLength: filteredCountries.length,
+    selectedCountry,
+    isLoading
+  });
+
   // Group countries by region for better UX
   const groupedCountries = Object.entries(REGIONS).reduce((acc, [region, codes]) => {
     const regionCountries = codes
@@ -133,9 +141,6 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
         aria-expanded={isOpen}
         onClick={() => {
           console.log('Footer currency selector clicked, isOpen:', !isOpen);
-          console.log('Available countries:', COUNTRIES.length);
-          console.log('Filtered countries:', filteredCountries.length);
-          console.log('Grouped countries:', Object.keys(groupedCountries));
           setIsOpen(!isOpen);
         }}
       >
@@ -160,15 +165,11 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
       {isOpen && (
         <>
           <div 
-            className="disclosure__list-wrapper country-selector absolute bottom-full left-0 mb-2 bg-white rounded-md shadow-xl border-2 border-blue-500 w-80 max-h-[400px] overflow-hidden transform -translate-y-2" 
+            className="disclosure__list-wrapper country-selector fixed bottom-20 left-4 right-4 bg-white rounded-md shadow-xl border border-gray-200 max-w-sm max-h-[400px] overflow-hidden" 
             style={{ 
-              zIndex: 99999,
-              backgroundColor: '#ffffff'
+              zIndex: 99999
             }}
           >
-            <div className="p-2 bg-blue-100 text-blue-800 text-xs font-bold">
-              DEBUG: Dropdown is open! Countries: {COUNTRIES.length}
-            </div>
             {/* Search Input */}
             <div className="p-3 border-b border-gray-100">
               <div className="relative">

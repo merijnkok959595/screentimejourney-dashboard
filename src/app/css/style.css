@@ -5278,19 +5278,29 @@ header[class*="bg-transparent"] .header-nav a {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .product-video-container {
-    max-width: 85% !important;
-    width: 85% !important;
+    max-width: 100% !important;
+    width: 100% !important;
     height: auto !important;
     aspect-ratio: 1/1 !important;
     margin: 0 auto !important;
-    padding: 0 1.5rem !important;
+    padding: 0 1rem !important;
     border-radius: 8px !important;
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important; /* Minimal shadow */
   }
+}
 
-  /* Mobile horizontal scrolling fixes */
+/* Tablet specific sizing (between mobile and desktop) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-video-container {
+    max-width: 90% !important;
+    width: 90% !important;
+  }
+}
+
+/* Mobile horizontal scrolling fixes */
+@media (max-width: 768px) {
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
