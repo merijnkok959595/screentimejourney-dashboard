@@ -47,3 +47,20 @@
 [00:00:59.125] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
 [00:00:59.125] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
 [00:02:19.254] Server  LOG     ✓ Compiled in 237ms
+[00:04:44.242] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:44.242] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:45.890] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:45.890] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:46.639] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:46.639] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:48.006] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:48.006] Browser LOG     FooterCurrencySelector render: {"countriesLength":45,"filteredLength":45,"isLoading":false,"isOpen":false,"selectedCountry":{"code":"CA","currency":"CAD","flag":"🇨🇦","name":"Canada","price":26.99,"symbol":"C$"}}
+[00:04:50.682] Server  LOG     ✓ Compiled in 163ms
+[00:05:01.763] Server  LOG     ✓ Compiled in 129ms
+[00:05:12.286] Server  LOG     ✓ Compiled in 225ms
+[00:05:18.175] Server  LOG     ✓ Compiled in 159ms
+[00:07:03.449] Server  LOG     ✓ Compiled in 144ms
+[00:07:37.944] Server  LOG     ✓ Compiled in 148ms
+[00:07:43.089] Server  LOG     ✓ Compiled in 150ms
+[00:07:48.539] Server  LOG     ✓ Compiled in 118ms
+[00:08:07.649] Server  LOG     ✓ Compiled in 169ms

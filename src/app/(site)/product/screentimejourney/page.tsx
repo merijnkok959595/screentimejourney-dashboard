@@ -6,7 +6,7 @@ import MilestonesPreview from '@/components/Common/MilestonesPreview';
 import LeaderboardPreview from '@/components/Common/LeaderboardPreview';
 import StripeCheckout from '@/components/Stripe/StripeCheckout';
 import PriceDisplay from '@/components/Common/PriceDisplay';
-import PaymentIcons from '@/components/Common/PaymentIcons';
+// Payment icons now shown in footer
 
 const ScreenTimeJourneyProductPage = () => {
   const [expandedQuickFaq, setExpandedQuickFaq] = useState<number | null>(null);
@@ -228,25 +228,6 @@ const ScreenTimeJourneyProductPage = () => {
                 )}
               </div>
 
-              {/* Payment Methods */}
-              <div style={{ marginBottom: '40px' }}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  alignItems: 'flex-start'
-                }}>
-                  <div style={{
-                    fontSize: '0.875rem',
-                    color: 'rgba(15, 23, 42, 0.6)',
-                    fontFamily: 'var(--font-body)',
-                    fontWeight: '500'
-                  }}>
-                    Secure payments with:
-                  </div>
-                  <PaymentIcons />
-                </div>
-              </div>
 
               {/* Quick FAQ Section */}
               <div style={{ marginBottom: '30px' }}>

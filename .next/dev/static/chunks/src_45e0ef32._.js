@@ -531,12 +531,12 @@ const Footer = ()=>{
                                     className: "footer-logo"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Common/Footer.tsx",
-                                    lineNumber: 12,
+                                    lineNumber: 13,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 11,
+                                lineNumber: 12,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -548,7 +548,7 @@ const Footer = ()=>{
                                         children: "info@screentimejourney.com"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 19,
+                                        lineNumber: 20,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -557,7 +557,7 @@ const Footer = ()=>{
                                         children: "+31 6 49232152"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 20,
+                                        lineNumber: 21,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -565,19 +565,19 @@ const Footer = ()=>{
                                         children: "Linnaeusstraat 35F-14, Amsterdam, Netherlands"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 21,
+                                        lineNumber: 22,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 18,
+                                lineNumber: 19,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Common/Footer.tsx",
-                        lineNumber: 10,
+                        lineNumber: 11,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -588,7 +588,7 @@ const Footer = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 27,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -600,7 +600,7 @@ const Footer = ()=>{
                                         children: "FAQ"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 29,
+                                        lineNumber: 30,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -609,7 +609,7 @@ const Footer = ()=>{
                                         children: "Contact"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 30,
+                                        lineNumber: 31,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -618,7 +618,7 @@ const Footer = ()=>{
                                         children: "About Me"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 31,
+                                        lineNumber: 32,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -627,7 +627,7 @@ const Footer = ()=>{
                                         children: "Milestones"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 32,
+                                        lineNumber: 33,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -636,7 +636,7 @@ const Footer = ()=>{
                                         children: "Leaderboard"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 33,
+                                        lineNumber: 34,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -645,19 +645,19 @@ const Footer = ()=>{
                                         children: "Job Opportunities"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 35,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 28,
+                                lineNumber: 29,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Common/Footer.tsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -668,7 +668,7 @@ const Footer = ()=>{
                                 children: "Blog Posts"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -680,7 +680,7 @@ const Footer = ()=>{
                                         children: "Why Quitting Porn Is the ..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 43,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -689,7 +689,7 @@ const Footer = ()=>{
                                         children: "The Dopamine Reset: How to Break ..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 44,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -698,7 +698,7 @@ const Footer = ()=>{
                                         children: "From Screen Addiction to Freedom ..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 45,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -707,7 +707,7 @@ const Footer = ()=>{
                                         children: "10 Proven Strategies to Build Discipline ..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 46,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -716,25 +716,25 @@ const Footer = ()=>{
                                         children: "How to Take Control of Your Screen Time ..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 47,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 41,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Common/Footer.tsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Common/Footer.tsx",
-                lineNumber: 8,
+                lineNumber: 9,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -750,12 +750,12 @@ const Footer = ()=>{
                         },
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$FooterCurrencySelector$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/components/Common/Footer.tsx",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Common/Footer.tsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -766,7 +766,7 @@ const Footer = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/Common/Footer.tsx",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -776,7 +776,7 @@ const Footer = ()=>{
                                 children: "2025, SCREENTIMEJOURNEY ©"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 62,
+                                lineNumber: 63,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -788,7 +788,7 @@ const Footer = ()=>{
                                         children: "Privacy policy"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 65,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -797,7 +797,7 @@ const Footer = ()=>{
                                         children: "Terms of service"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 66,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -806,7 +806,7 @@ const Footer = ()=>{
                                         children: "Refund policy"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 67,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -815,7 +815,7 @@ const Footer = ()=>{
                                         children: "Shipping policy"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 68,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -824,31 +824,31 @@ const Footer = ()=>{
                                         children: "Cookie preferences"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Common/Footer.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 69,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Common/Footer.tsx",
-                                lineNumber: 63,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Common/Footer.tsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Common/Footer.tsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Common/Footer.tsx",
-        lineNumber: 7,
+        lineNumber: 8,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2469,7 +2469,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$LeaderboardPreview$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Common/LeaderboardPreview.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stripe$2f$StripeCheckout$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Stripe/StripeCheckout.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$PriceDisplay$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Common/PriceDisplay.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$PaymentIcons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Common/PaymentIcons.tsx [app-client] (ecmascript)");
+// Choose your preferred payment icons style:
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$PaymentIcons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Common/PaymentIcons.tsx [app-client] (ecmascript)"); // Original custom SVG
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -2481,6 +2482,8 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+// import PaymentIcons from '@/components/Common/PaymentIconsClean'; // Clean typography-based
+// import PaymentIcons from '@/components/Common/PaymentIconsCDN'; // Professional CDN icons
 const ScreenTimeJourneyProductPage = ()=>{
     _s();
     const [expandedQuickFaq, setExpandedQuickFaq] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -2580,17 +2583,17 @@ const ScreenTimeJourneyProductPage = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 81,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 80,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                lineNumber: 76,
+                                lineNumber: 79,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2609,7 +2612,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                         children: "Screentimejourney"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 103,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2629,12 +2632,12 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                     plan: "premium"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                    lineNumber: 118,
+                                                    lineNumber: 121,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 111,
+                                                lineNumber: 114,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2649,13 +2652,13 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                 children: "Your freedom back for less than the price of a coffee."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 123,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 113,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2671,7 +2674,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 138,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             [
@@ -2705,14 +2708,14 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                                     children: "check"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                                    lineNumber: 156,
+                                                                    lineNumber: 159,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 feature
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                            lineNumber: 147,
+                                                            lineNumber: 150,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2723,19 +2726,19 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                            lineNumber: 173,
+                                                            lineNumber: 176,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, index, true, {
                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 149,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 136,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2766,7 +2769,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 185,
+                                            lineNumber: 188,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: handleStartNow,
@@ -2789,12 +2792,12 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "Start now"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 207,
+                                            lineNumber: 210,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 186,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2819,23 +2822,23 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                     children: "Secure payments with:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                    lineNumber: 239,
+                                                    lineNumber: 242,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$PaymentIcons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 250,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 233,
+                                            lineNumber: 236,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 232,
+                                        lineNumber: 235,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2851,7 +2854,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 254,
+                                                lineNumber: 257,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             quickFaqs.map((faq, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2886,14 +2889,14 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                                     children: "question_mark"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                                    lineNumber: 278,
+                                                                    lineNumber: 281,
                                                                     columnNumber: 23
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 faq.question
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                            lineNumber: 262,
+                                                            lineNumber: 265,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         expandedQuickFaq === index && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2908,7 +2911,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                             children: faq.answer
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                            lineNumber: 295,
+                                                            lineNumber: 298,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2919,41 +2922,41 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                            lineNumber: 307,
+                                                            lineNumber: 310,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, index, true, {
                                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                    lineNumber: 261,
+                                                    lineNumber: 264,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                        lineNumber: 252,
+                                        lineNumber: 255,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                lineNumber: 99,
+                                lineNumber: 102,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                        lineNumber: 73,
+                        lineNumber: 76,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                    lineNumber: 72,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                lineNumber: 71,
+                lineNumber: 74,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2972,7 +2975,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                            lineNumber: 325,
+                            lineNumber: 328,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3002,12 +3005,12 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                 children: "schedule"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 344,
+                                                lineNumber: 347,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 339,
+                                            lineNumber: 342,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3021,7 +3024,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "15 min Setup"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 356,
+                                            lineNumber: 359,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3035,13 +3038,13 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "Let me guide you through the setup step by step"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 365,
+                                            lineNumber: 368,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                    lineNumber: 338,
+                                    lineNumber: 341,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3063,12 +3066,12 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                 children: "diamond"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 383,
+                                                lineNumber: 386,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 378,
+                                            lineNumber: 381,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3082,7 +3085,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "Fun"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 395,
+                                            lineNumber: 398,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3096,13 +3099,13 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "Receive weekly milestones & progress updates"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 407,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                    lineNumber: 377,
+                                    lineNumber: 380,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3124,12 +3127,12 @@ const ScreenTimeJourneyProductPage = ()=>{
                                                 children: "local_offer"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                                lineNumber: 422,
+                                                lineNumber: 425,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 417,
+                                            lineNumber: 420,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3143,7 +3146,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "100% Refund"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 434,
+                                            lineNumber: 437,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3157,19 +3160,19 @@ const ScreenTimeJourneyProductPage = ()=>{
                                             children: "If this does not help you I promise a refund"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                            lineNumber: 443,
+                                            lineNumber: 446,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                    lineNumber: 416,
+                                    lineNumber: 419,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                            lineNumber: 331,
+                            lineNumber: 334,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3180,18 +3183,18 @@ const ScreenTimeJourneyProductPage = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                            lineNumber: 456,
+                            lineNumber: 459,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                    lineNumber: 323,
+                    lineNumber: 326,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                lineNumber: 322,
+                lineNumber: 325,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$MilestonesPreview$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3200,7 +3203,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                 title: "Milestones"
             }, void 0, false, {
                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                lineNumber: 465,
+                lineNumber: 468,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$LeaderboardPreview$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3209,7 +3212,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                 title: "Leaderboard"
             }, void 0, false, {
                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                lineNumber: 468,
+                lineNumber: 471,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             showStickyCart && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3244,7 +3247,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                        lineNumber: 492,
+                        lineNumber: 495,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3264,7 +3267,7 @@ const ScreenTimeJourneyProductPage = ()=>{
                                 children: "Screentimejourney"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                lineNumber: 505,
+                                lineNumber: 508,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3277,18 +3280,18 @@ const ScreenTimeJourneyProductPage = ()=>{
                                     plan: "premium"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                    lineNumber: 520,
+                                    lineNumber: 523,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                                lineNumber: 515,
+                                lineNumber: 518,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                        lineNumber: 504,
+                        lineNumber: 507,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stripe$2f$StripeCheckout$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3314,24 +3317,24 @@ const ScreenTimeJourneyProductPage = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                        lineNumber: 525,
+                        lineNumber: 528,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                lineNumber: 472,
+                lineNumber: 475,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Common$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-                lineNumber: 551,
+                lineNumber: 554,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/(site)/product/screentimejourney/page.tsx",
-        lineNumber: 69,
+        lineNumber: 72,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

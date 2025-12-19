@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import FooterCurrencySelector from './FooterCurrencySelector';
+import PaymentIconsMinimal from './PaymentIconsMinimal';
 
 const Footer: React.FC = () => {
   return (
@@ -50,9 +51,18 @@ const Footer: React.FC = () => {
 
       {/* Footer Bottom - Policies */}
       <div className="container footer-bottom">
-        {/* Currency Selector */}
-        <div className="footer-currency-section" style={{ display: 'flex', justifyContent: 'flex-start', paddingBottom: '1rem', marginBottom: '1rem' }}>
+        {/* Currency Selector and Payment Icons */}
+        <div className="footer-currency-section" style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          paddingBottom: '1rem', 
+          marginBottom: '1rem',
+          flexWrap: 'wrap',
+          gap: '1rem'
+        }}>
           <FooterCurrencySelector />
+          <PaymentIconsMinimal />
         </div>
         
         {/* Separator Line */}
