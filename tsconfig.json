@@ -38,6 +38,7 @@
   "exclude": [
     "node_modules",
     "remotion-video-generator",
+    "app.screentimejourney",
     "aws_lambda_api",
     "vercel-dashboard",
     "shopify-leaderboard-app"
