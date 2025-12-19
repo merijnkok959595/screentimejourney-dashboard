@@ -983,6 +983,10 @@ main {
   max-height: 500px;
 }
 
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .min-h-\[270px\] {
   min-height: 270px;
 }
@@ -1101,6 +1105,10 @@ main {
 
 .w-px {
   width: 1px;
+}
+
+.w-80 {
+  width: 20rem;
 }
 
 .min-w-\[111px\] {
@@ -1383,6 +1391,11 @@ main {
 
 .translate-y-full {
   --tw-translate-y: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-2 {
+  --tw-translate-y: -.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

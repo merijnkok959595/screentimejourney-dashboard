@@ -204,8 +204,9 @@ const Signin = () => {
             </form>
           </div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Signin;

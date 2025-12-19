@@ -133,6 +133,9 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
         aria-expanded={isOpen}
         onClick={() => {
           console.log('Footer currency selector clicked, isOpen:', !isOpen);
+          console.log('Available countries:', COUNTRIES.length);
+          console.log('Filtered countries:', filteredCountries.length);
+          console.log('Grouped countries:', Object.keys(groupedCountries));
           setIsOpen(!isOpen);
         }}
       >
@@ -156,7 +159,16 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
 
       {isOpen && (
         <>
-          <div className="disclosure__list-wrapper country-selector absolute bottom-full left-0 mb-2 bg-white rounded-md shadow-lg border border-gray-200 min-w-[320px] max-h-[500px] overflow-hidden" style={{ zIndex: 9999, border: '2px solid red' }}>
+          <div 
+            className="disclosure__list-wrapper country-selector absolute bottom-full left-0 mb-2 bg-white rounded-md shadow-xl border-2 border-blue-500 w-80 max-h-[400px] overflow-hidden transform -translate-y-2" 
+            style={{ 
+              zIndex: 99999,
+              backgroundColor: '#ffffff'
+            }}
+          >
+            <div className="p-2 bg-blue-100 text-blue-800 text-xs font-bold">
+              DEBUG: Dropdown is open! Countries: {COUNTRIES.length}
+            </div>
             {/* Search Input */}
             <div className="p-3 border-b border-gray-100">
               <div className="relative">
@@ -180,7 +192,7 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
             </div>
             
             {/* Countries List */}
-            <div className="disclosure__list country-selector__list max-h-[400px] overflow-y-auto">
+            <div className="disclosure__list country-selector__list max-h-[300px] overflow-y-auto">
               {searchTerm ? (
                 // Show search results
                 <div className="py-1">
@@ -261,7 +273,7 @@ const FooterCurrencySelector: React.FC<FooterCurrencySelectorProps> = ({
               )}
             </div>
           </div>
-          <div className="country-selector__overlay fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+          <div className="country-selector__overlay fixed inset-0" style={{ zIndex: 99998 }} onClick={() => setIsOpen(false)} />
         </>
       )}
     </div>

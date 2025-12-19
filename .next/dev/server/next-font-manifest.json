@@ -1,6 +1,9 @@
 {
   "app": {
-    "[project]/src/app/(site)/page": []
+    "[project]/src/app/(site)/(pages)/signin/page": [],
+    "[project]/src/app/(site)/(pages)/signup/page": [],
+    "[project]/src/app/(site)/page": [],
+    "[project]/src/app/(site)/product/screentimejourney/page": []
   },
   "appUsingSizeAdjust": false,
   "pages": {},

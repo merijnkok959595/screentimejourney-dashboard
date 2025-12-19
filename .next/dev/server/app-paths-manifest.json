@@ -1,3 +1,6 @@
 {
-  "/(site)/page": "app/(site)/page.js"
+  "/(site)/(pages)/signin/page": "app/(site)/(pages)/signin/page.js",
+  "/(site)/(pages)/signup/page": "app/(site)/(pages)/signup/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/product/screentimejourney/page": "app/(site)/product/screentimejourney/page.js"
 }
