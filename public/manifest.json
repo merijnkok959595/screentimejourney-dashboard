@@ -1,25 +1,82 @@
 {
+  "name": "Screen Time Journey - Digital Wellness Dashboard",
   "short_name": "STJ Dashboard",
-  "name": "Screen Time Journey Dashboard",
+  "description": "Track your digital wellness journey with personalized milestones and achievements",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#2E0456",
+  "background_color": "#ffffff",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["lifestyle", "productivity", "health"],
   "icons": [
     {
       "src": "https://cdn.shopify.com/s/files/1/0866/6749/3623/files/stj_favi_purple_v2.png?v=1757864301",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0866/6749/3623/files/stj_favi_purple_v2.png?v=1757864301",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "https://cdn.shopify.com/s/files/1/0866/6749/3623/files/stj_favi_inverted_yellow_extra.png?v=1757864432",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "any maskable"
     },
     {
       "src": "https://cdn.shopify.com/s/files/1/0866/6749/3623/files/stj_favi_inverted_yellow_extra.png?v=1757864432",
+      "sizes": "512x512",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#FFD700",
-  "background_color": "#000000"
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile dashboard view"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop dashboard view"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Milestones",
+      "short_name": "Milestones",
+      "description": "Check your progress milestones",
+      "url": "/?action=milestones",
+      "icons": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0866/6749/3623/files/stj_favi_purple_v2.png?v=1757864301",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Edit Profile",
+      "short_name": "Profile",
+      "description": "Update your profile settings",
+      "url": "/?action=profile",
+      "icons": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0866/6749/3623/files/stj_favi_purple_v2.png?v=1757864301",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }

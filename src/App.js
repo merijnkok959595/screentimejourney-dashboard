@@ -602,7 +602,6 @@ function App() {
   const [onboardStep, setOnboardStep] = useState(1);
   const [newUsername, setNewUsername] = useState('');
   const [newGender, setNewGender] = useState('');
-  const [newWhatsapp, setNewWhatsapp] = useState('');
   const [newCountryCode, setNewCountryCode] = useState('+31');
   const [phoneNumber, setPhoneNumber] = useState(''); // Full phone number with country code
   const [detectedCountry, setDetectedCountry] = useState('NL'); // Default to Netherlands
@@ -617,13 +616,10 @@ function App() {
   
   // Debounced username for real-time validation
   const debouncedUsername = useDebounce(newUsername, 500);
-  const [whatsappCode, setWhatsappCode] = useState('');
-  const [whatsappCodeSent, setWhatsappCodeSent] = useState(false);
-  const [whatsappLinked, setWhatsappLinked] = useState(false);
-  const [whatsappError, setWhatsappError] = useState('');
-  const [resendCooldown, setResendCooldown] = useState(0);
-  const [whatsappLoading, setWhatsappLoading] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showPWAModal, setShowPWAModal] = useState(false);
+  const [pwaNotificationsEnabled, setPwaNotificationsEnabled] = useState(false);
+  const [deferredPWAPrompt, setDeferredPWAPrompt] = useState(null);
   
   // Profile management state
   const [profileData, setProfileData] = useState(null);
@@ -732,48 +728,27 @@ function App() {
   // Payment wall state
   const [showPaymentWall, setShowPaymentWall] = useState(false);
 
-  // Set country code from user's existing WhatsApp number in DynamoDB
+  // PWA Install Prompt Handling
   useEffect(() => {
-    if (profileData?.whatsapp) {
-      // Extract country code from existing WhatsApp number (e.g., "+31627207989" → "NL")
-      const phoneWithCode = profileData.whatsapp;
-      
-      // Extended country code to country mapping (covers 50+ most common countries)
-      const countryCodeMap = {
-        // North America
-        '+1': 'US',
-        // Europe
-        '+31': 'NL', '+32': 'BE', '+33': 'FR', '+34': 'ES', '+39': 'IT',
-        '+41': 'CH', '+43': 'AT', '+44': 'GB', '+45': 'DK', '+46': 'SE',
-        '+47': 'NO', '+48': 'PL', '+49': 'DE', '+351': 'PT', '+352': 'LU',
-        '+353': 'IE', '+358': 'FI', '+420': 'CZ', '+30': 'GR', '+36': 'HU',
-        '+40': 'RO', '+359': 'BG', '+385': 'HR', '+386': 'SI', '+421': 'SK',
-        // Middle East & Africa
-        '+20': 'EG', '+27': 'ZA', '+212': 'MA', '+213': 'DZ', '+216': 'TN',
-        '+234': 'NG', '+254': 'KE', '+966': 'SA', '+971': 'AE', '+972': 'IL',
-        '+974': 'QA', '+962': 'JO', '+961': 'LB', '+90': 'TR',
-        // Asia & Pacific
-        '+61': 'AU', '+64': 'NZ', '+81': 'JP', '+82': 'KR', '+86': 'CN',
-        '+91': 'IN', '+92': 'PK', '+93': 'AF', '+94': 'LK', '+95': 'MM',
-        '+60': 'MY', '+62': 'ID', '+63': 'PH', '+65': 'SG', '+66': 'TH',
-        '+84': 'VN', '+852': 'HK', '+886': 'TW', '+880': 'BD',
-        // Latin America
-        '+52': 'MX', '+54': 'AR', '+55': 'BR', '+56': 'CL', '+57': 'CO',
-        '+51': 'PE', '+58': 'VE', '+507': 'PA', '+506': 'CR'
-      };
-      
-      // Try to match country code from WhatsApp number
-      for (const [code, country] of Object.entries(countryCodeMap)) {
-        if (phoneWithCode.startsWith(code)) {
-          setDetectedCountry(country);
-          console.log(`✅ Country detected from profile: ${country} (${code})`);
-          return;
-        }
-      }
+    const handleBeforeInstallPrompt = (e) => {
+      e.preventDefault();
+      setDeferredPWAPrompt(e);
+      console.log('📱 PWA install prompt captured');
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  // Check if notifications are already enabled
+  useEffect(() => {
+    if ('Notification' in window) {
+      setPwaNotificationsEnabled(Notification.permission === 'granted');
     }
-    // Default to NL if no WhatsApp or country code not recognized
-    console.log('ℹ️ Using default country: NL');
-  }, [profileData]);
+  }, []);
 
   // Countdown timer for resend cooldown
   useEffect(() => {
@@ -3728,166 +3703,41 @@ function App() {
     }
   };
 
-  const sendWhatsAppCode = async () => {
-    setWhatsappError(''); // Clear any previous errors
-    
-    // Validate phone number from PhoneInput component
-    if (!phoneNumber || !phoneNumber.trim()) {
-      setWhatsappError('Please enter your phone number');
-      return;
-    }
-    
-    // Use isPossiblePhoneNumber from react-phone-number-input for validation
-    if (!isPossiblePhoneNumber(phoneNumber)) {
-      setWhatsappError('Please enter a valid phone number');
-      return;
-    }
-
+  // Save PWA notification preference to DynamoDB
+  const saveNotificationPreference = async (enabled) => {
     try {
-      setWhatsappLoading(true);
-      
-      // Check if this is local development
-      const isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      
-      if (isLocalDev) {
-        // In local development, simulate sending code
-        setTimeout(() => {
-          setWhatsappCodeSent(true);
-          setResendCooldown(60); // Start 60-second cooldown
-          setOnboardStep(5); // Move to verification step
-          setWhatsappLoading(false);
-          console.log(`🔧 Local dev: Simulated sending code to ${phoneNumber}`);
-          alert(`Demo: Verification code "123456" sent to ${phoneNumber}`);
-        }, 1000);
-        return;
-      }
-      
-      // CRITICAL: Use centralized customer ID extraction
       const customerId = extractCustomerId();
-      
       if (!customerId) {
-        alert('Unable to send verification code: Customer ID not found');
-        setWhatsappLoading(false);
+        console.error('❌ Cannot save notification preference: Customer ID not found');
         return;
       }
-      
-      console.log('📱 Sending WhatsApp code with customer ID:', customerId);
-      console.log('🌐 Current URL:', window.location.href);
-      console.log('🍪 All cookies:', document.cookie);
-      
-      // Call backend API to send WhatsApp verification code
-      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://ajvrzuyjarph5fvskles42g7ba0zxtxc.lambda-url.eu-north-1.on.aws'}/send_whatsapp_code`, {
+
+      console.log(`🔔 Saving PWA notification preference: ${enabled ? 'ENABLED' : 'DISABLED'}`);
+
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://ajvrzuyjarph5fvskles42g7ba0zxtxc.lambda-url.eu-north-1.on.aws'}/update_pwa_notifications`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          phone_number: phoneNumber.replace(/\s/g, ''), // Use phoneNumber from PhoneInput
-          customer_id: customerId
-        })
-      });
-      
-      const result = await response.json();
-      
-      if (response.ok && result.success) {
-        setWhatsappCodeSent(true);
-        setResendCooldown(60); // Start 60-second cooldown
-        setOnboardStep(5); // Move to verification step
-        console.log('✅ WhatsApp code sent successfully');
-      } else {
-        alert(result.error || 'Failed to send verification code. Please try again.');
-      }
-      
-    } catch (error) {
-      console.error('❌ Error sending WhatsApp code:', error);
-      alert('Failed to send verification code. Please check your connection and try again.');
-    } finally {
-      setWhatsappLoading(false);
-    }
-  };
-
-  const verifyWhatsAppCode = async () => {
-    setWhatsappError(''); // Clear any previous errors
-    
-    if (!whatsappCode || whatsappCode.length !== 6) {
-      setWhatsappError('Please enter the complete 6-digit verification code');
-      return;
-    }
-
-    try {
-      setWhatsappLoading(true);
-      
-      // Check if this is local development
-      const isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      
-      if (isLocalDev) {
-        // In local development, accept "123456" as valid code
-        setTimeout(async () => {
-          if (whatsappCode === '123456') {
-            setWhatsappLinked(true);
-            console.log('🔧 Local dev: WhatsApp verification successful');
-            
-            // Set default notification settings when WhatsApp is verified
-            setDefaultNotificationSettings();
-            
-            await saveProfile(); // Proceed to save profile
-          } else {
-            setWhatsappLoading(false);
-            setWhatsappError('Invalid code. Use "123456" for demo');
-          }
-        }, 500);
-        return;
-      }
-      
-      // CRITICAL: Use centralized customer ID extraction
-      const customerId = extractCustomerId();
-      
-      if (!customerId) {
-        alert('Unable to verify code: Customer ID not found');
-        setWhatsappLoading(false);
-        return;
-      }
-      
-      console.log('🔍 Verifying WhatsApp code with customer ID:', customerId);
-      
-      // Call backend API to verify WhatsApp code
-      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://ajvrzuyjarph5fvskles42g7ba0zxtxc.lambda-url.eu-north-1.on.aws'}/verify_whatsapp_code`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          phone_number: phoneNumber.replace(/\s/g, ''), // Use phoneNumber from PhoneInput
-          code: whatsappCode,
+        body: JSON.stringify({
           customer_id: customerId,
-          username: newUsername || 'tempuser',
-          gender: newGender || 'other'
+          pwa_notifications_enabled: enabled
         })
       });
-      
+
       const result = await response.json();
-      
+
       if (response.ok && result.success) {
-        setWhatsappLinked(true);
-        console.log('✅ WhatsApp verified and saved to profile:', result.phone);
-        
-        // Set default notification settings when WhatsApp is verified
-        setDefaultNotificationSettings();
-        
-        // The backend has already saved the WhatsApp data to the profile
-        // Just proceed to save the rest of the profile (username, gender)
-        await saveProfile();
+        console.log('✅ PWA notification preference saved to DynamoDB');
+        setPwaNotificationsEnabled(enabled);
       } else {
-        setWhatsappError(result.error || 'Invalid verification code. Please try again.');
+        console.error('❌ Failed to save PWA notification preference:', result.error);
       }
-      
     } catch (error) {
-      console.error('❌ Error verifying WhatsApp code:', error);
-      setWhatsappError('Failed to verify code. Please check your connection and try again.');
-    } finally {
-      setWhatsappLoading(false);
+      console.error('❌ Error saving PWA notification preference:', error);
     }
   };
+
 
   // Synchronous username check for final validation before saving
   const checkUsernameAvailabilitySync = async (username) => {
@@ -4910,13 +4760,12 @@ function App() {
         <div className={`modal-overlay ${showOnboarding ? 'active' : ''}`}>
           <div className="modal" role="dialog" aria-modal="true" aria-labelledby="onboard-title" style={{maxWidth: '800px'}}>
             <div className="modal__header">
-              <div className="step-indicator">Step {onboardStep} of 5</div>
+              <div className="step-indicator">Step {onboardStep} of 4</div>
               <h3 id="onboard-title" className="modal__title">
                 {onboardStep === 1 && "Choose username"}
                 {onboardStep === 2 && "Select gender"}
                 {onboardStep === 3 && "Your commitment"}
-                {onboardStep === 4 && "Setup WhatsApp"}
-                {onboardStep === 5 && "Verify phone"}
+                {onboardStep === 4 && "Verify phone"}
               </h3>
             </div>
 
@@ -5168,38 +5017,34 @@ function App() {
             {onboardStep === 4 && (
               <div>
                 <div style={{marginBottom: '0'}}>
-                  <p className="helper">Receive weekly progress updates inside WhatsApp.</p>
-                  <div style={{ marginBottom: '1rem' }}>
-                    <PhoneInput
-                      international
-                      defaultCountry={detectedCountry}
-                      value={phoneNumber}
-                      onChange={(value) => {
-                        setPhoneNumber(value || '');
-                        // Extract country code and phone number
-                        if (value) {
-                          const match = value.match(/^\+(\d+)/);
-                          if (match) {
-                            setNewCountryCode('+' + match[1].split(/[^\d]/)[0]);
-                            setNewWhatsapp(value.replace(/^\+\d+/, '').replace(/\D/g, ''));
-                          }
-                        }
-                      }}
-                      countrySelectProps={{ disabled: true }}
-                      className="phone-input-international"
-                      placeholder="Enter phone number"
-                    />
+                  <p className="helper">Complete your profile setup to get started with your digital wellness journey.</p>
+
+                  <div style={{ marginTop: '20px', padding: '16px', background: '#f9fafb', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
+                    <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600', color: '#111827', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      📱 Mobile App Available
+                    </h4>
+                    <p style={{ margin: '0', fontSize: '14px', color: '#6b7280', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                      After setup, you'll get an option to install our mobile app for the best experience with push notifications.
+                    </p>
                   </div>
-                  {whatsappError && <p className="error-message">{whatsappError}</p>}
                 </div>
                 <div className="modal__footer">
                   <button
                     className="btn-primary"
                     style={{width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'}}
-                    disabled={!phoneNumber || whatsappLoading}
-                    onClick={sendWhatsAppCode}
+                    disabled={profileLoading}
+                    onClick={async () => {
+                      await saveProfile();
+                      setShowOnboarding(false);
+                      // Show PWA modal for mobile users after onboarding
+                      if (window.innerWidth <= 768) {
+                        setTimeout(() => {
+                          setShowPWAModal(true);
+                        }, 1000);
+                      }
+                    }}
                   >
-                    {whatsappLoading ? (
+                    {profileLoading ? (
                       <>
                         <div style={{
                           width: '16px',
@@ -5209,118 +5054,15 @@ function App() {
                           borderRadius: '50%',
                           animation: 'spin 1s linear infinite'
                         }}></div>
-                        Sending...
+                        Setting up your dashboard...
                       </>
-                    ) : 'Validate'}
-                    {/* Disabled overlay - same as device flow */}
-                    {!phoneNumber && !whatsappLoading && (
-                      <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'rgba(255, 255, 255, 0.4)',
-                        borderRadius: '7px',
-                        pointerEvents: 'none'
-                      }}></div>
-                    )}
-                  </button>
-                  <button 
-                    className="btn-secondary"
-                    style={{width: '100%', position: 'relative', overflow: 'hidden'}} 
-                    disabled={whatsappLoading || profileLoading}
-                    onClick={async () => {
-                      await saveProfile(); // Save without WhatsApp
-                    }}
-                  >
-                    {profileLoading ? 'Saving profile...' : whatsappLoading ? 'Please wait...' : 'Skip (not recommended)'}
-                    {/* Disabled overlay - same as device flow */}
-                    {(whatsappLoading || profileLoading) && (
-                      <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'rgba(255, 255, 255, 0.4)',
-                        borderRadius: '7px',
-                        pointerEvents: 'none'
-                      }}></div>
-                    )}
+                    ) : 'Complete Setup'}
                   </button>
                   <button className="btn-tertiary" onClick={() => setOnboardStep(3)}>Back</button>
                 </div>
               </div>
             )}
 
-            {onboardStep === 5 && (
-              <div>
-                <div style={{marginBottom: '0'}}>
-                  <p style={{marginBottom: '4px', fontSize: '14px', color: '#6b7280', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', textAlign: 'left', marginLeft: '0', paddingLeft: '0'}}>
-                    We sent a 6-digit code via WhatsApp to {newCountryCode}{newWhatsapp}
-                  </p>
-                  <p style={{margin: '0 0 16px 0', textAlign: 'left', paddingLeft: '0'}}>
-                    <button className="link-inline" style={{marginLeft: '0', paddingLeft: '0', textAlign: 'left'}} onClick={() => setOnboardStep(4)}>Wrong number?</button>
-                  </p>
-                  <input 
-                    className="input code-input" 
-                    placeholder="123456" 
-                    value={whatsappCode}
-                    onChange={(e) => setWhatsappCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                    onFocus={handleInputFocus}
-                    maxLength="6"
-                  />
-                  {whatsappError && <p className="error-message">{whatsappError}</p>}
-                </div>
-                <div className="modal__footer">
-                  <button
-                    className="btn-primary"
-                    style={{width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'}}
-                    disabled={whatsappCode.length !== 6 || whatsappLoading || profileLoading}
-                    onClick={verifyWhatsAppCode}
-                  >
-                    {(profileLoading || whatsappLoading) ? (
-                      <>
-                        <div style={{
-                          width: '16px',
-                          height: '16px',
-                          border: '2px solid transparent',
-                          borderTop: '2px solid white',
-                          borderRadius: '50%',
-                          animation: 'spin 1s linear infinite'
-                        }}></div>
-                        {profileLoading ? 'Saving...' : 'Verifying...'}
-                      </>
-                    ) : 'Verify & Complete'}
-                    {/* Disabled overlay - same as device flow */}
-                    {(whatsappCode.length !== 6) && !whatsappLoading && !profileLoading && (
-                      <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'rgba(255, 255, 255, 0.4)',
-                        borderRadius: '7px',
-                        pointerEvents: 'none'
-                      }}></div>
-                    )}
-                  </button>
-                  <button 
-                    className="btn-tertiary" 
-                    disabled={resendCooldown > 0}
-                    onClick={() => {
-                      if (resendCooldown === 0) {
-                        sendWhatsAppCode();
-                      }
-                    }}
-                  >
-                    {resendCooldown > 0 ? `Send code again (${resendCooldown}s)` : 'Send code again'}
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
@@ -5452,53 +5194,48 @@ function App() {
                 </div>
               </div>
 
-              {/* WhatsApp */}
+              {/* Push Notifications */}
               <div style={{ marginBottom: '20px' }}>
-                <label className="form-label" style={{position: 'static', transform: 'none', marginBottom: '8px', display: 'block', fontSize: '15px', color: '#0F172A', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', fontWeight: '400'}}>WhatsApp</label>
-                
-                {/* Current WhatsApp Display */}
-                {profileData?.whatsapp && !profileEditData.showWhatsAppEdit && (
-                  <div style={{ marginBottom: '1rem', padding: '16px', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '7px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ color: '#0F172A', fontSize: '14px', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>{profileData.whatsapp}</span>
-                        {profileData.whatsapp_opt_in && (
-                          <span style={{
-                            fontSize: '12px',
-                            fontWeight: '500',
-                            color: '#059669',
-                            backgroundColor: '#f9f9f9',
-                            padding: '4px 10px',
-                            borderRadius: '7px',
-                            border: '1px solid #e5e7eb',
-                            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-                            whiteSpace: 'nowrap'
-                          }}>
-                            ✓ Verified
-                          </span>
-                        )}
+                <label className="form-label" style={{position: 'static', transform: 'none', marginBottom: '8px', display: 'block', fontSize: '15px', color: '#0F172A', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', fontWeight: '400'}}>Push Notifications</label>
+
+                <div style={{ marginBottom: '1rem', padding: '16px', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '7px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <div style={{
+                        width: '40px',
+                        height: '40px',
+                        background: 'linear-gradient(135deg, #2E0456, #FFD700)',
+                        borderRadius: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '18px'
+                      }}>
+                        🔔
                       </div>
-                      <button 
-                        type="button"
-                        style={{ 
-                          background: 'none',
-                          border: 'none',
-                          color: '#2E0456',
-                          fontSize: '12px',
-                          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-                          fontWeight: '500',
-                          textDecoration: 'underline',
-                          textUnderlineOffset: '3px',
-                          cursor: 'pointer',
-                          padding: 0
-                        }}
-                        onClick={() => setProfileEditData(prev => ({...prev, showWhatsAppEdit: true, editPhoneNumber: profileData.whatsapp || ''}))}
-                      >
-                        Change
-                      </button>
+                      <div>
+                        <div style={{ fontSize: '14px', fontWeight: '500', color: '#0F172A', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', marginBottom: '2px' }}>
+                          Milestone Notifications
+                        </div>
+                        <div style={{ fontSize: '13px', color: '#6b7280', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif' }}>
+                          Get notified when you reach new milestones
+                        </div>
+                      </div>
                     </div>
+                    <label className="toggle">
+                      <input
+                        type="checkbox"
+                        checked={pwaNotificationsEnabled}
+                        onChange={async (e) => {
+                          const enabled = e.target.checked;
+                          setPwaNotificationsEnabled(enabled);
+                          await saveNotificationPreference(enabled);
+                        }}
+                      />
+                      <span className="toggle-slider"></span>
+                    </label>
                   </div>
-                )}
+                </div>
 
                 {/* WhatsApp Edit Form */}
                 {(!profileData?.whatsapp || profileEditData.showWhatsAppEdit) && (
@@ -6013,7 +5750,143 @@ function App() {
           </div>
         </div>
 
+        {/* PWA Install Modal */}
+        <div className={`modal-overlay ${showPWAModal ? 'active' : ''}`}>
+          <div className="modal" role="dialog" aria-modal="true" aria-labelledby="pwa-modal-title" style={{maxWidth: '500px'}}>
+            <div className="modal__header">
+              <h3 id="pwa-modal-title" className="modal__title">📱 Install Mobile App</h3>
+            </div>
 
+            <div>
+              <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #2E0456, #FFD700)',
+                  borderRadius: '20px',
+                  margin: '0 auto 16px auto',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '36px'
+                }}>
+                  📱
+                </div>
+                <h4 style={{
+                  margin: '0 0 8px 0',
+                  fontSize: '18px',
+                  fontWeight: '600',
+                  color: '#111827',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
+                }}>
+                  Get the Full Experience
+                </h4>
+                <p style={{
+                  margin: '0',
+                  fontSize: '14px',
+                  color: '#6b7280',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
+                }}>
+                  Install our mobile app for push notifications and offline access
+                </p>
+              </div>
+
+              <div style={{
+                background: '#f9fafb',
+                padding: '16px',
+                borderRadius: '8px',
+                border: '1px solid #e5e7eb',
+                marginBottom: '20px'
+              }}>
+                <h5 style={{
+                  margin: '0 0 12px 0',
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  color: '#111827',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
+                }}>
+                  🚀 Features You'll Get:
+                </h5>
+                <ul style={{
+                  margin: '0',
+                  paddingLeft: '20px',
+                  fontSize: '14px',
+                  color: '#6b7280',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
+                }}>
+                  <li style={{ marginBottom: '8px' }}>📲 Push notifications for milestones</li>
+                  <li style={{ marginBottom: '8px' }}>🔄 Offline access to your dashboard</li>
+                  <li style={{ marginBottom: '8px' }}>⚡ Faster loading and better performance</li>
+                  <li>📱 Native mobile experience</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="modal__footer">
+              <button
+                className="btn-primary"
+                style={{width: '100%', marginBottom: '12px'}}
+                onClick={async () => {
+                  try {
+                    // Request notification permission
+                    const permission = await Notification.requestPermission();
+                    if (permission === 'granted') {
+                      setPwaNotificationsEnabled(true);
+                      // Register service worker for push notifications
+                      if ('serviceWorker' in navigator) {
+                        const registration = await navigator.serviceWorker.ready;
+                        // Save notification preference to DynamoDB
+                        await saveNotificationPreference(true);
+                      }
+                    }
+                  } catch (error) {
+                    console.error('Error enabling notifications:', error);
+                  }
+
+                  // Try to trigger PWA install
+                  if ('beforeinstallprompt' in window) {
+                    // PWA install prompt will be shown
+                    setShowPWAModal(false);
+                  } else {
+                    // Fallback: show manual instructions
+                    alert('To install the app, tap the share button and select "Add to Home Screen"');
+                    setShowPWAModal(false);
+                  }
+                }}
+              >
+                Enable Notifications & Install App
+              </button>
+
+              <button
+                className="btn-secondary"
+                style={{width: '100%', marginBottom: '12px'}}
+                onClick={async () => {
+                  // Just enable notifications without PWA install
+                  try {
+                    const permission = await Notification.requestPermission();
+                    if (permission === 'granted') {
+                      setPwaNotificationsEnabled(true);
+                      await saveNotificationPreference(true);
+                    }
+                  } catch (error) {
+                    console.error('Error enabling notifications:', error);
+                  }
+                  setShowPWAModal(false);
+                }}
+              >
+                Just Enable Notifications
+              </button>
+
+              <button
+                className="btn-tertiary"
+                style={{width: '100%'}}
+                onClick={() => setShowPWAModal(false)}
+              >
+                Skip for Now
+              </button>
+            </div>
+          </div>
+        </div>
 
         {/* Device Flow Modal */}
         <div className={`modal-overlay ${showDeviceFlow ? 'active' : ''}`}>
